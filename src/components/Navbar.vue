@@ -7,7 +7,7 @@ export default {
 </script>
 
 <template>
-    <div class="navbar bg-neutral text-neutral-content">
+    <div class="navbar bg-neutral text-[#fffffe]">
         <div class="container mx-auto">
             <div class="flex-1">
                 <router-link to="/" class="btn btn-ghost normal-case text-xl">Al-Qur'an App</router-link>
