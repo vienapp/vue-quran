@@ -20,7 +20,7 @@ export default {
 
 <template>
     <div class="container mx-auto">
-        <div class="my-10 grid gap-4 grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4" >
+        <div class="my-10 grid gap-6 grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4" >
             <Card 
             v-for="surah in surahs" 
             :key="surah.number" 
