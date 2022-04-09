@@ -14,6 +14,7 @@ export default {
         const response = await fetch("https://api.quran.sutanlab.id/surah");
         const result = await response.json();
         this.surahs = result.data;
+        console.log(this.surahs)
     }
 }
 </script>
@@ -21,13 +22,15 @@ export default {
 <template>
     <div class="container mx-auto px-5 md:px-5 lg:px-0">
         <div class="my-10 grid gap-6 grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4" >
-            <Card 
-            v-for="surah in surahs" 
-            :key="surah.number" 
-            :name="surah.name.transliteration.id"
-            :number="surah.number"
-            :revelation="surah.revelation.id"
-            :numberAyahs="surah.numberOfVerses" />
+                <Card 
+                v-for="surah in surahs" 
+                :key="surah.number" 
+                :name="surah.name.transliteration.id"
+                :number="surah.number"
+                :revelation="surah.revelation.id"
+                :numberAyahs="surah.numberOfVerses"
+                :surahNumber="surah.number" 
+                />
         </div>
     </div>
 </template>

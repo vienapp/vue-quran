@@ -1,6 +1,6 @@
 <script>
 export default {
-    props: ['name', 'number', 'revelation', 'numberAyahs']
+    props: ['name', 'number', 'revelation', 'numberAyahs', 'surahNumber']
 }
 </script>
 
@@ -11,7 +11,7 @@ export default {
             <p class="text-[#ddd6d6]">Surah {{ revelation }}</p>
             <p class="text-[#ddd6d6]">{{ numberAyahs }} Ayat</p>
             <div class="card-actions mt-3 justify-end">
-                <button class="btn btn-sm btn-primary btn-block">Baca</button>
+                <router-link class="btn btn-sm btn-primary btn-block" :to="`/surah/${surahNumber}`">Baca</router-link>
             </div>
         </div>
     </div>
