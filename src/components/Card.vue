@@ -7,7 +7,8 @@ export default {
 <template>
     <div class="card bg-neutral text-[#fffffe] shadow-xl">
         <div class="card-body">
-            <h2 class="card-title"><span class="badge badge-primary badge-outline badge-md">{{ number }}</span>{{ name }}</h2>
+            <h2 class="card-title"><span
+                    class="badge badge-primary badge-outline badge-md">{{ number }}</span>{{ name }}</h2>
             <p class="text-[#ddd6d6]">Surah {{ revelation }}</p>
             <p class="text-[#ddd6d6]">{{ numberAyahs }} Ayat</p>
             <div class="card-actions mt-3 justify-end">

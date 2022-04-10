@@ -4,7 +4,8 @@ import Tafsir from '../components/Tafsir.vue'
 
 export default {
     components: {
-        Surah, Tafsir
+        Surah,
+        Tafsir
     },
     data() {
         return {
@@ -15,12 +16,14 @@ export default {
         }
     },
     computed: {
-    currentTabComponent() {
-      return this.currentTab.toLowerCase()
-    }
-  },
+        currentTabComponent() {
+            return this.currentTab.toLowerCase()
+        }
+    },
     async created() {
-        let { number } = this.$route.params
+        let {
+            number
+        } = this.$route.params
 
         const response = await fetch("https://quran-api-id.vercel.app/surahs/" + number);
         const result = await response.json();
@@ -37,23 +40,17 @@ export default {
             <p class="text-md">{{ surahs.translation }}</p>
         </div>
         <div class="tabs mt-5">
-            <a class="tab tab-lg tab-bordered"
-                v-for="tab in tabs" 
-                :key="tab" 
-                :class="{ 'tab-active': currentTab === tab}"
-                @click="currentTab = tab">{{tab}}</a> 
+            <a class="tab tab-lg tab-bordered" v-for="tab in tabs" :key="tab"
+                :class="{ 'tab-active': currentTab === tab}" @click="currentTab = tab">{{tab}}</a>
         </div>
         <div class="card bg-base-100 shadow-xl mb-5">
             <div class="card-body">
                 <p v-if="currentTab === 'Surah'" class="text-center text-4xl font-alqalam">{{ bismillah.arab }}</p>
                 <div v-if="currentTab === 'Surah'" class="divider"></div>
                 <keep-alive>
-                    <component :is="currentTabComponent" 
-                    v-for="surah in surahs.ayahs" :key="surah"
-                    :number="surah.number.inSurah"
-                    :arab="surah.arab"
-                    :translation="surah.translation"
-                    :tafsir="surah.tafsir.kemenag.short" />
+                    <component :is="currentTabComponent" v-for="surah in surahs.ayahs" :key="surah"
+                        :number="surah.number.inSurah" :arab="surah.arab" :translation="surah.translation"
+                        :tafsir="surah.tafsir.kemenag.short" />
                 </keep-alive>
             </div>
         </div>
