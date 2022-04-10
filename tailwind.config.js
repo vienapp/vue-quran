@@ -4,7 +4,11 @@ module.exports = {
     "./src/**/*.{vue,js,ts,jsx,tsx}",
   ],
   theme: {
-    extend: {},
+    extend: { 
+      fontFamily: {
+        alqalam: ["Al Qalam Quran", "serif"],
+      },
+    },
   },
   daisyui: {
     themes: [{
@@ -21,5 +25,5 @@ module.exports = {
       },
     }, ],
   },
-  plugins: [require("daisyui")],
+  plugins: [require('@tailwindcss/typography'), require("daisyui")],
 }

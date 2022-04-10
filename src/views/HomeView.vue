@@ -11,7 +11,7 @@ export default {
         }
     },
     async created() {
-        const response = await fetch("https://api.quran.sutanlab.id/surah");
+        const response = await fetch("https://quran-api-id.vercel.app/surahs");
         const result = await response.json();
         this.surahs = result.data;
         console.log(this.surahs)
@@ -25,10 +25,10 @@ export default {
                 <Card 
                 v-for="surah in surahs" 
                 :key="surah.number" 
-                :name="surah.name.transliteration.id"
+                :name="surah.name"
                 :number="surah.number"
-                :revelation="surah.revelation.id"
-                :numberAyahs="surah.numberOfVerses"
+                :revelation="surah.revelation"
+                :numberAyahs="surah.numberOfAyahs"
                 :surahNumber="surah.number" 
                 />
         </div>
