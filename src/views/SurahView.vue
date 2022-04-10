@@ -35,6 +35,17 @@ export default {
 
 <template>
     <div class="container mx-auto px-5 md:px-5 lg:px-0">
+        <div class="text-md mt-2 breadcrumbs">
+            <ul>
+                <li>
+                    <router-link to="/">Beranda</router-link>
+                </li>
+                <li>{{ surahs.name }}</li>
+            </ul>
+        </div>
+        <router-link to="/" class="btn btn-sm gap-2 btn-ghost normal-case mt-2 px-0">
+            ❮ Kembali ke beranda
+        </router-link>
         <div class="mt-4">
             <h1 class="text-4xl font-bold">{{ surahs.name }}</h1>
             <p class="text-md">{{ surahs.translation }}</p>
