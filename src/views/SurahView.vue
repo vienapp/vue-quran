@@ -30,7 +30,7 @@ export default {
             number
         } = this.$route.params
 
-        const response = await fetch("https://quran-api-id.vercel.app/surahs/" + number);
+        const response = await fetch("https://api.quran.sutanlab.id/surah/" + number);
         const result = await response.json();
         this.surahs = result.data;
         this.loading = false
@@ -47,15 +47,15 @@ export default {
             <li>
                 <router-link to="/">Beranda</router-link>
             </li>
-            <li>{{ surahs.name }}</li>
+            <li>{{ surahs.name.transliteration.id }}</li>
         </ul>
     </div>
     <router-link to="/" class="btn btn-sm gap-2 btn-ghost normal-case mt-2 px-0">
         ❮ Kembali ke beranda
     </router-link>
     <div class="mt-4">
-        <h1 class="text-4xl font-bold">{{ surahs.name }}</h1>
-        <p class="text-md">{{ surahs.translation }}</p>
+        <h1 class="text-4xl font-bold">{{ surahs.name.transliteration.id }}</h1>
+        <p class="text-md">{{ surahs.name.translation.id }}</p>
     </div>
     <div class="tabs mt-5">
         <a class="tab tab-lg tab-bordered" v-for="tab in tabs" :key="tab" :class="{ 'tab-active': currentTab === tab}"
@@ -63,12 +63,12 @@ export default {
     </div>
     <div class="card bg-base-100 shadow-xl mb-5">
         <div class="card-body">
-            <p v-if="currentTab === 'Surah'" class="text-center text-4xl font-alqalam">{{ bismillah.arab }}</p>
+            <p v-if="currentTab === 'Surah'" class="text-center text-4xl font-alqalam">{{ surahs.preBismillah === null ? '' : surahs.preBismillah.text.arab  }}</p>
             <div v-if="currentTab === 'Surah'" class="divider"></div>
             <keep-alive>
-                <component :is="currentTabComponent" v-for="surah in surahs.ayahs" :key="surah"
-                    :number="surah.number.inSurah" :arab="surah.arab" :translation="surah.translation"
-                    :tafsir="surah.tafsir.kemenag.short" />
+                <component :is="currentTabComponent" v-for="surah in surahs.verses" :key="surah"
+                    :number="surah.number.inSurah" :arab="surah.text.arab" :translation="surah.translation.id"
+                    :tafsir="surah.tafsir.id.short" :audio="surah.audio.primary" />
             </keep-alive>
         </div>
     </div>
