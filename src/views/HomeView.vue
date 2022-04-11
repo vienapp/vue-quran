@@ -11,7 +11,7 @@ export default {
         return {
             surahs: [],
             loading: true,
-            fullPage: false
+            fullPage: true
         }
     },
     async created() {
@@ -28,7 +28,7 @@ export default {
         <loading v-model:active="loading" :is-full-page="fullPage" loader="dots" background-color="#181818" color="#50c4cf" />
         <div v-if="loading === false" class="my-10 grid gap-6 grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
             <Card v-for="surah in surahs" :key="surah.number" :name="surah.name.transliteration.id" :number="surah.number"
-                :revelation="surah.revelation.id" :numberAyahs="surah.numberOfVerses" :surahNumber="surah.number" />
+                :revelation="surah.revelation.id" :numberAyahs="surah.numberOfVerses" />
         </div>
     </div>
 </template>

@@ -17,7 +17,7 @@ export default {
             tabs: ['Surah', 'Tafsir'],
             currentTab: 'Surah',
             loading: true,
-            fullPage: false
+            fullPage: true
         }
     },
     computed: {
