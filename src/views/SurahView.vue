@@ -64,7 +64,7 @@ export default {
     <div class="card bg-base-100 shadow-xl mb-5">
         <div class="card-body">
             <p v-if="currentTab === 'Surah'" class="text-center text-4xl font-alqalam">{{ surahs.preBismillah === null ? '' : surahs.preBismillah.text.arab  }}</p>
-            <div v-if="currentTab === 'Surah'" class="divider"></div>
+            <div v-if="currentTab === 'Surah' && surahs.preBismillah !== null" class="divider"></div>
             <keep-alive>
                 <component :is="currentTabComponent" v-for="surah in surahs.verses" :key="surah"
                     :number="surah.number.inSurah" :arab="surah.text.arab" :translation="surah.translation.id"
