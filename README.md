@@ -1,29 +1,16 @@
-# vue-quran
 
-This template should help get you started developing with Vue 3 in Vite.
+# Al-Qur'an Website
 
-## Recommended IDE Setup
+Website Al-Qur'an yang dibuat dengan Vue 3 Options API dan Tailwind CSS.
 
-[VSCode](https://code.visualstudio.com/) + [Volar](https://marketplace.visualstudio.com/items?itemName=johnsoncodehk.volar) (and disable Vetur) + [TypeScript Vue Plugin (Volar)](https://marketplace.visualstudio.com/items?itemName=johnsoncodehk.vscode-typescript-vue-plugin).
+- [Live Site](https://quran-digiweb.vercel.app/)
+- [API](https://github.com/gadingnst/quran-api)
 
-## Customize configuration
+## Screenshots
 
-See [Vite Configuration Reference](https://vitejs.dev/config/).
+![Halaman Home](https://user-images.githubusercontent.com/69517308/162782142-4b08ed01-261f-4487-9a1f-d0a79b828ab1.png)
 
-## Project Setup
+![Halaman Surah](https://user-images.githubusercontent.com/69517308/162782353-7d3359d4-ea56-442b-90af-fb8239eef659.png)
 
-```sh
-npm install
-```
+![Halaman Tafsir](https://user-images.githubusercontent.com/69517308/162782353-7d3359d4-ea56-442b-90af-fb8239eef659.png)
 
-### Compile and Hot-Reload for Development
-
-```sh
-npm run dev
-```
-
-### Compile and Minify for Production
-
-```sh
-npm run build
-```
