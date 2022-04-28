@@ -17,5 +17,9 @@ export default {
     <Navbar />
   </header>
 
-  <RouterView />
+  <router-view v-slot="{ Component }">
+    <XyzTransition xyz="fade up-2" mode="out-in">
+      <component :is="Component" />
+    </XyzTransition>
+  </router-view>
 </template>
