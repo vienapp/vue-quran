@@ -20,7 +20,7 @@ export default {
             <p class="text-right text-4xl font-alqalam">{{ surah.text.arab }}</p>
         </div>
         <p class="mt-5"><span class="font-bold">Artinya:</span> {{ surah.translation.id }}</p>
-        <audio controls class="mt-3 w-full sm:w-auto">
+        <audio controls class="mt-3 w-full sm:w-1/2">
             <source :src="surah.audio.primary" type="audio/mp3">
             Your browser does not support the audio element.
         </audio>
